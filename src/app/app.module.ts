@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/index';
+import { StoreModule } from '@ngrx/store';
 import { CartComponent } from './cart/cart.component';
 import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
@@ -23,10 +24,11 @@ import { LineItemComponent } from './cart/line-item/line-item.component';
 import { LineItemListComponent } from './cart/line-item-list/line-item-list.component';
 import { OverviewComponent } from './user/overview/overview.component';
 
+import { routes } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CartComponent,
     UserComponent,
     ProductComponent,
@@ -46,9 +48,12 @@ import { OverviewComponent } from './user/overview/overview.component';
     OverviewComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    HomeModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
