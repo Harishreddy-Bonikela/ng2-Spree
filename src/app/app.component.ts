@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Product } from './utils/product';
 
 @Component({
   selector: 'app-root',
