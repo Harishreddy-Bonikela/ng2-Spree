@@ -1,0 +1,46 @@
+<section>
+    <div class="container">
+        <div class="navbar">
+            <a class="navbar-brand"><img src="assets/images.jpeg" alt="Angular Spree"></a>
+            <a class="navbar-brand"><img src="assets/Buy_Now.png" style="float:right" alt="Angular Spree"></a>
+            <a class="title">Welcome to Shopping Spree</a>
+            <ul class="navbar-nav">
+                <li *ngFor="let taxon of taxonList" class="pull-left">
+                    <a (click)="selectTaxon(taxon)" href="javascript:void(0)">{{taxon.name}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="desktop-query">
+            <input placeholder="Search" class="desktop-searchBar">
+            <a class="desktop-submit">
+                <span class="web-sprite desktop-iconSearch sprites-search"></span>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" dropdown>
+                <a href="#" class="dropdown-toggle" dropdownToggle>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" *dropdownMenu>
+                    <li><a routerLink="/user">My Profile</a></li>
+                    <li><a routerLink="/user/orders">My Orders</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a routerLink="/user/addresses">Saved Addresses</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a (click)="logout()">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h4 class="heading">Category</h4>
+        <div class="filter-box">
+          <ul class="taxonomy">
+            <li *ngFor="let taxon of taxonList" class="filter"> 
+              <input type="checkbox">{{taxon.name}}
+            </li>
+          </ul>
+        </div>
+    </div>
+</section>
